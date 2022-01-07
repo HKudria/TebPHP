@@ -6,7 +6,7 @@ wb+
 ab Запись -->
 
 <?php
-$homepage = file_get_contents('./index.html');
+$homepage = file_get_contents('./index.php');
 $name = "Jame";
 $page = "Homepage";
 $color = "#fff";
