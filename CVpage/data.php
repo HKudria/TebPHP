@@ -3,7 +3,7 @@
 return [
     'about' => [
         'name' => 'Herman Kudria',
-        'post' => 'softwafe developer',
+        'post' => 'software developer',
         'email' => 'herman.kudria@icloud.com',
         'phone' => '+48 515-614-690',
         'site' => 'Current page',
