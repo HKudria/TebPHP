@@ -18,7 +18,7 @@ if (!empty($_POST)){
     }
 
     if(mb_strlen($_POST['comment'])>20){
-        $newComment = $_POST['comment'];
+        $newComment = htmlentities($_POST['comment']);
         $_SESSION['form']['comment'] = $newComment;
     } else {
         $_SESSION['message']['2'] = "Your comments is too short. You should write more than 20 symbols";
