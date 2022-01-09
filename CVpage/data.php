@@ -58,7 +58,7 @@ return [
             'post' => 'Novego Poland Piotr Kozieł',
             'years' => '04/2019 - 10/2020',
             'place' => 'Floor polisher | All Poland',
-            'duty' => 'Application adn develop different epoxy floors'
+            'duty' => 'Application and develop different epoxy floors'
         ],
         [
             'post' => 'Uber & BOLT',
@@ -68,7 +68,7 @@ return [
         ],
         [
             'post' => 'UCOZ.com',
-            'years' => '06/2017 - 04/2020',
+            'years' => '06/2015 - 09/2016',
             'place' => 'Supporter | Ukraine - Cherkasy',
             'duty' => 'Supporting users when creating web pages in that cms'
         ],
