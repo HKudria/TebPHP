@@ -157,7 +157,7 @@ $comments = $db->query("SELECT * FROM comments ORDER BY time_added DESC");
                                     <h3 class="job-title">$career[post]</h3>
                                     <div class="time">$career[years]</div>
                                 </div><!--//upper-row-->
-                                <div class="company">$career[place] | $career[place]</div>
+                                <div class="company">$career[company] | $career[place]</div>
                             </div><!--//meta-->
                             <div class="details">
                                 <p>$career[duty]</p>
