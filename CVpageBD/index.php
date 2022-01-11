@@ -1,15 +1,27 @@
 <?php
 session_start();
+if(empty($_SESSION['lang'])){
+    $_SESSION['lang'] = 'en';
+}
+
+if(!empty($_GET['lang'])){
+    if($_GET['lang'] == 'en'){
+        $_SESSION['lang'] = 'en';
+    }
+    if($_GET['lang'] == 'pl'){
+        $_SESSION['lang'] = 'pl';
+    }
+}
 $data = require_once 'connect.php';
-$aboutData = $db->query("SELECT * FROM about");
+$aboutData = $db->query("SELECT * FROM about WHERE `lang` = '$_SESSION[lang]'");
 $aboutData = $aboutData->fetch();
-$educationData = $db->query("SELECT * FROM educations");
-$languages = $db->query("SELECT * FROM languages");
-$interest = $db->query("SELECT * FROM interests");
-$aboutCareer = $db->query("SELECT * FROM aboutcareer");
+$educationData = $db->query("SELECT * FROM educations WHERE `lang` = '$_SESSION[lang]'");
+$languages = $db->query("SELECT * FROM languages  WHERE `lang` = '$_SESSION[lang]'");
+$interest = $db->query("SELECT * FROM interests WHERE `lang` = '$_SESSION[lang]'");
+$aboutCareer = $db->query("SELECT * FROM aboutcareer WHERE `lang` = '$_SESSION[lang]'");
 $aboutCareer = $aboutCareer->fetch();
-$careers = $db->query("SELECT * FROM careers");
-$projects = $db->query("SELECT * FROM projects");
+$careers = $db->query("SELECT * FROM careers WHERE `lang` = '$_SESSION[lang]'");
+$projects = $db->query("SELECT * FROM projects WHERE `lang` = '$_SESSION[lang]'");
 $skills = $db->query("SELECT * FROM skills");
 $comments = $db->query("SELECT * FROM comments ORDER BY time_added DESC");
 ?>
@@ -43,18 +55,29 @@ $comments = $db->query("SELECT * FROM comments ORDER BY time_added DESC");
 
 <body>
     <div class="wrapper">
+
        <div class="warning">
         <?php
         if (isset($_SESSION['message'])){
-            foreach ($_SESSION['message'] as $mistake){
+            foreach ($_SESSION['message'][$_SESSION['lang']] as $mistake){
                 echo $mistake . "<br>";
             }
-
             unset($_SESSION['message']);
         }
         ?>
        </div>
+
         <div class="sidebar-wrapper">
+            <div class="lang">
+                <?php
+                if($_SESSION['lang'] == 'en'){
+                    echo "Chose language: ";
+                } else if($_SESSION['lang'] == 'pl'){
+                    echo "Wybierz język: ";
+                }
+                ?>
+                <a href="./index.php?lang=en">English</a> | <a href="./index.php?lang=pl">Polski</a>
+            </div>
             <div class="profile-container">
                 <img class="profile" src="assets/images/profile.jpg" alt="" width="150" height="auto"/>
                 <h1 class="name"><?php echo $aboutData['name'] ?></h1>
@@ -71,7 +94,7 @@ $comments = $db->query("SELECT * FROM comments ORDER BY time_added DESC");
                 </ul>
             </div><!--//contact-container-->
             <div class="education-container container-block">
-                <h2 class="container-block-title">Education</h2>
+                <h2 class="container-block-title"><?php echo $_SESSION['lang']=='en' ? 'Education' : 'Edukacja'; ?></h2>
                 <?php
                 foreach ($educationData as $educationDatum){
                     echo <<<EDUCATION
@@ -86,7 +109,7 @@ $comments = $db->query("SELECT * FROM comments ORDER BY time_added DESC");
             </div><!--//education-container-->
             
             <div class="languages-container container-block">
-                <h2 class="container-block-title">Languages</h2>
+                <h2 class="container-block-title"><?php echo $_SESSION['lang']=='en' ? 'Languages' : 'Znajomość języków'; ?></h2>
                 <ul class="list-unstyled interests-list">
                     <?php
                     foreach ($languages as $language){
@@ -99,7 +122,7 @@ $comments = $db->query("SELECT * FROM comments ORDER BY time_added DESC");
             </div><!--//interests-->
             
             <div class="interests-container container-block">
-                <h2 class="container-block-title">Interests</h2>
+                <h2 class="container-block-title"><?php echo $_SESSION['lang']=='en' ? 'Interests' : 'Zainteresowania'; ?></h2>
                 <ul class="list-unstyled interests-list">
                     <?php
                     foreach ($interest as $interes){
@@ -116,14 +139,14 @@ $comments = $db->query("SELECT * FROM comments ORDER BY time_added DESC");
         <div class="main-wrapper">
             
             <section class="section summary-section">
-                <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
+                <h2 class="section-title"><i class="fa fa-user"></i><?php echo $_SESSION['lang']=='en' ? 'Career Profile' : 'Profil kandydata'; ?></h2>
                 <div class="summary">
                     <p><?php echo $aboutCareer['description']; ?></p>
                 </div><!--//summary-->
             </section><!--//section-->
             
             <section class="section experiences-section">
-                <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
+                <h2 class="section-title"><i class="fa fa-briefcase"></i><?php echo $_SESSION['lang']=='en' ? 'Experiences' : 'Doświadczenie'; ?></h2>
 
                 <?php
                 foreach ($careers as $career){
@@ -150,9 +173,16 @@ $comments = $db->query("SELECT * FROM comments ORDER BY time_added DESC");
             </section><!--//section-->
             
             <section class="section projects-section">
-                <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
+                <h2 class="section-title"><i class="fa fa-archive"></i><?php echo $_SESSION['lang']=='en' ? 'Projects' : 'Projekty'; ?></h2>
                 <div class="intro">
-                    <p>At this moment I don't have any commercial project</p>
+                    <?php
+                    if($_SESSION['lang'] == 'en'){
+                        echo "<p>At this moment I don't have any commercial project</p>";
+                    } else if($_SESSION['lang'] == 'pl'){
+                        echo "<p>Na ten moment brak komercyjnych projektów</p>";
+                    }
+                    ?>
+
                 </div><!--//intro-->
 
 
@@ -170,7 +200,7 @@ $comments = $db->query("SELECT * FROM comments ORDER BY time_added DESC");
             </section><!--//section-->
             
             <section class="skills-section section">
-                <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
+                <h2 class="section-title"><i class="fa fa-rocket"></i><?php echo $_SESSION['lang']=='en' ? 'Skills &amp; Proficiency' : 'Umiejętności'; ?></h2>
                 <div class="skillset">        
                     <?php
                         foreach ($skills as $skill){
@@ -192,7 +222,7 @@ $comments = $db->query("SELECT * FROM comments ORDER BY time_added DESC");
             </section><!--//skills-section-->
 
             <section class="section experiences-section">
-                <h2 class="section-title">Comments about me</h2>
+                <h2 class="section-title"><?php echo $_SESSION['lang']=='en' ? 'Comments about me' : 'Opinia o mnie'; ?></h2>
                 <?php
                 foreach ($comments as $comment){
                     echo <<<CAREERS
@@ -212,7 +242,7 @@ $comments = $db->query("SELECT * FROM comments ORDER BY time_added DESC");
             </section><!--//section-->
 
             <div class="item">
-                <h2 class="section-title">ADD COMMENT</h2>
+                <h2 class="section-title"><?php echo $_SESSION['lang']=='en' ? 'ADD COMMENT' : 'DODAĆ OPINIE'; ?></h2>
             <form action="comment.php" method="POST">
                <input type="text" name="company" placeholder="Company" value="<?php echo $_SESSION['form']['company'] ?? ''; ?>" required>
                <input type="text" name="email" placeholder="email" value="<?php echo $_SESSION['form']['email'] ?? ''; ?>"required><br>

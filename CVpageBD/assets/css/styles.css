@@ -327,3 +327,10 @@ input[type=submit]:hover {
   text-align: center;
   font-size: 15pt;
 }
+
+.lang {
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 11pt;
+  padding-top: 10px;
+}

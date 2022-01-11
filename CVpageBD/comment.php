@@ -7,21 +7,24 @@ if (!empty($_POST)){
         $company = trim($_POST['company']);
         $_SESSION['form']['company'] = $company;
     } else {
-        $_SESSION['message']['0'] = "Your company name isn't correct. Please check your company name and try again";
+        $_SESSION['message']['en']['0'] = "Your company name isn't correct. Please check your company name and try again";
+        $_SESSION['message']['pl']['0'] = "Nazwa Twojej firmy nie jest poprawna. Proszę sprawdzić nazwę firmy i spróbować ponownie";
     }
 
     if (preg_match("/^\w+\.?+-?+\w+@\w+\.[a-z]{2,5}$/i", $_POST['email'])){
         $email = trim($_POST['email']);
         $_SESSION['form']['email'] = $email;
     } else {
-        $_SESSION['message']['1'] = "Your email isn't correct. Please check your email and try again";
+        $_SESSION['message']['en']['1'] = "Your email isn't correct. Please check your email and try again";
+        $_SESSION['message']['pl']['1'] = "Twój e-mail jest nieprawidłowy. Proszę sprawdzić swój email i spróbować ponownie";
     }
 
     if(mb_strlen($_POST['comment'])>20){
         $newComment = htmlentities($_POST['comment']);
         $_SESSION['form']['comment'] = $newComment;
     } else {
-        $_SESSION['message']['2'] = "Your comments is too short. You should write more than 20 symbols";
+        $_SESSION['message']['en']['2'] = "Your comments is too short. You should write more than 20 symbols";
+        $_SESSION['message']['pl']['2'] = "Twój komentarz jest zbyt krótki. Powinieneś napisać więcej niż 20 symboli";
     }
 
 
@@ -41,12 +44,14 @@ if (!empty($_POST)){
                 die();
 
             } else {
-                $_SESSION['message'] = "Please check protection. Your answer isn't correct";
+                $_SESSION['message']['en']['3'] = "Please check protection. Your answer isn't correct";
+                $_SESSION['message']['pl']['3'] = "Proszę sprawdzić capctcze Twoja odpowiedź nie jest poprawna";
                 header('location: ./');
                 die();
             }
     }else {
-        $_SESSION['message'] = "Please complete all fields";
+        $_SESSION['message']['en']['4'] = "Please complete all fields";
+        $_SESSION['message']['pl']['4'] = "Proszę wypełnić wszystkie pola";
         header('location: ./');
     }
 } else {
