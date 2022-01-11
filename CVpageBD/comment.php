@@ -49,5 +49,7 @@ if (!empty($_POST)){
         $_SESSION['message'] = "Please complete all fields";
         header('location: ./');
     }
+} else {
+    header('Location: ./index.php');
 }
 ?>
