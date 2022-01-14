@@ -45,8 +45,8 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `name`, `post`, `email`, `phone`, `git`, `linkedIn`, `site`, `site_url`, `lang`) VALUES
-(1, 'Herman Kudria', 'softvare developer', 'herman.kudria@icloud.com', '+48 515-614-690', 'https://github.com/HKudria', 'https://www.linkedin.com/in/herman-kudria-10868b207/', 'Currently page', '/', 'en'),
-(2, 'Herman Kudria', 'softvare developer', 'herman.kudria@icloud.com', '+48 515-614-690', 'https://github.com/HKudria', 'https://www.linkedin.com/in/herman-kudria-10868b207/', 'Obecna strona', '/', 'pl');
+(1, 'Herman Kudria', 'software developer', 'herman.kudria@icloud.com', '+48 515-614-690', 'https://github.com/HKudria', 'https://www.linkedin.com/in/herman-kudria-10868b207/', 'cvhermankudria.000webhostapp.com', '/', 'en'),
+(2, 'Herman Kudria', 'software developer', 'herman.kudria@icloud.com', '+48 515-614-690', 'https://github.com/HKudria', 'https://www.linkedin.com/in/herman-kudria-10868b207/', 'cvhermankudria.000webhostapp.com', '/', 'pl');
 
 -- --------------------------------------------------------
 
