@@ -18,7 +18,7 @@ $aboutData = $aboutData->fetch();
 $educationData = $db->query("SELECT * FROM educations WHERE `lang` = '$_SESSION[lang]'");
 $languages = $db->query("SELECT * FROM languages  WHERE `lang` = '$_SESSION[lang]'");
 $interest = $db->query("SELECT * FROM interests WHERE `lang` = '$_SESSION[lang]'");
-$aboutCareer = $db->query("SELECT * FROM aboutcareer WHERE `lang` = '$_SESSION[lang]'");
+$aboutCareer = $db->query("SELECT * FROM aboutcareer WHERE `lang` = '$_SESSION[lang]' ");
 $aboutCareer = $aboutCareer->fetch();
 $careers = $db->query("SELECT * FROM careers WHERE `lang` = '$_SESSION[lang]'");
 $projects = $db->query("SELECT * FROM projects WHERE `lang` = '$_SESSION[lang]'");
