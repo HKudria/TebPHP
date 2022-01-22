@@ -31,3 +31,11 @@
 		$db = dbInstance();
 		return $db->lastInsertId();
 	}
+
+    function checkID($id){
+        $id = (int) $id;
+        if(!preg_match('/^[1-9]+/',$id)){
+          $id = 0;
+        }
+        return $id;
+    }
