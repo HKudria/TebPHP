@@ -44,9 +44,9 @@ return [
 
     ],
     'interest' => [
-        'Computer science', 'Spend time withs my friends'
+        'Computer science', 'Spend time withs clean_class friends'
     ],
-    'aboutCareer' => 'Hi, I’m from Ukraine and I moved to Poland five years ago. I graduated from the Cherkasy State Business College as Junior Software Specialist. I’ve been learning PHP at TEB school in Poznan from 2021. Actually I’m looking for a job or internship as PHP Developer. I will do my best to get this job.',
+    'aboutCareer' => 'Hi, I’m from Ukraine and I moved to Poland five years ago. I graduated from the Cherkasy State Business College as Junior Software Specialist. I’ve been learning PHP at TEB school in Poznan from 2021. Actually I’m looking for a job or internship as PHP Developer. I will do clean_class best to get this job.',
     'career' => [
         [
             'post' => 'R&S WIND',
@@ -76,7 +76,7 @@ return [
     'project' => [
         [
             'name' => 'Currently page',
-            'description' => 'This page was created as page for introduce myself and show my basic skill at PHP language.',
+            'description' => 'This page was created as page for introduce myself and show clean_class basic skill at PHP language.',
             'link' => '/',
         ],
     ],

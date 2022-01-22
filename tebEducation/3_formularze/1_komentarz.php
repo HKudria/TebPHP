@@ -15,7 +15,7 @@ $surname="Kowalski";
 
   $text = "<br>Imię i nazwisko: ";
   $text .= $name;
-  echo $text;
+  $a = 10;
   $text = $surname;
   echo "<br>$text<br>";
 

@@ -65,7 +65,7 @@ CREATE TABLE `aboutcareer` (
 --
 
 INSERT INTO `aboutcareer` (`about_id`, `description`, `lang`) VALUES
-(1, 'Hi, I’m from Ukraine and I moved to Poland five years ago. I graduated from the Cherkasy State Business College as Junior Software Specialist. I’ve been learning PHP at TEB school in Poznan from 2021. Actually I’m looking for a job or internship as PHP Developer. I will do my best to get this job.', 'en'),
+(1, 'Hi, I’m from Ukraine and I moved to Poland five years ago. I graduated from the Cherkasy State Business College as Junior Software Specialist. I’ve been learning PHP at TEB school in Poznan from 2021. Actually I’m looking for a job or internship as PHP Developer. I will do clean_class best to get this job.', 'en'),
 (2, 'Cześć, jestem z Ukrainy i przeprowadziłam się do Polski pięć lat temu. Ukończyłem Cherkasy State Business College jako młodszy specjalista ds. oprogramowania. Od 2021 roku uczę się PHP w szkole TEB w Poznaniu. Obecnie szukam pracy lub stażu jako PHP Developer. Zrobię wszystko co w mojej mocy, aby dostać tę pracę.', 'pl');
 
 -- --------------------------------------------------------
@@ -166,7 +166,7 @@ CREATE TABLE `interests` (
 
 INSERT INTO `interests` (`interest_id`, `ineterest`, `lang`) VALUES
 (1, 'Computer science', 'en'),
-(2, 'Spend time withs my friends and family', 'en'),
+(2, 'Spend time withs clean_class friends and family', 'en'),
 (3, 'Techlogii IT', 'pl'),
 (4, 'Spędzać czas z kolegami i rodziną', 'pl');
 
@@ -216,7 +216,7 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`project_id`, `name`, `descriprion`, `ulr`, `lang`) VALUES
-(1, 'Currently page', 'This page was created as page for introduce myself and show my basic skill at PHP language.', '/', 'en'),
+(1, 'Currently page', 'This page was created as page for introduce myself and show clean_class basic skill at PHP language.', '/', 'en'),
 (2, 'Obecna strona', 'Ta strona została stworzona jako strona do przedstawienia się i pokazania moich podstawowych umiejętności w języku PHP.', '/', 'pl');
 
 -- --------------------------------------------------------

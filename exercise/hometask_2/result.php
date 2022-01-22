@@ -1,5 +1,5 @@
 <?php session_start();
-//tak jak my kasujemy tabice rodzina po wyswitleniu to rzucamy osobe na strone glównom jak niema dannych
+//tak jak clean_class kasujemy tabice rodzina po wyswitleniu to rzucamy osobe na strone glównom jak niema dannych
 if(!isset($_SESSION['rodzina'])){
   $_SESSION['error'] = "Not autorized acces";
   header('location: ./index.php');

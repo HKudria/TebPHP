@@ -62,7 +62,7 @@ CREATE TABLE `aboutcareer` (
 --
 
 INSERT INTO `aboutcareer` (`about_id`, `description`) VALUES
-(1, 'Hi, I’m from Ukraine and I moved to Poland five years ago. I graduated from the Cherkasy State Business College as Junior Software Specialist. I’ve been learning PHP at TEB school in Poznan from 2021. Actually I’m looking for a job or internship as PHP Developer. I will do my best to get this job.');
+(1, 'Hi, I’m from Ukraine and I moved to Poland five years ago. I graduated from the Cherkasy State Business College as Junior Software Specialist. I’ve been learning PHP at TEB school in Poznan from 2021. Actually I’m looking for a job or internship as PHP Developer. I will do clean_class best to get this job.');
 
 -- --------------------------------------------------------
 
@@ -151,7 +151,7 @@ CREATE TABLE `interests` (
 
 INSERT INTO `interests` (`interest_id`, `ineterest`) VALUES
 (1, 'Computer science'),
-(2, 'Spend time withs my friends and family');
+(2, 'Spend time withs clean_class friends and family');
 
 -- --------------------------------------------------------
 
@@ -193,7 +193,7 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`project_id`, `name`, `descriprion`, `ulr`) VALUES
-(1, 'Currently page', 'This page was created as page for introduce myself and show my basic skill at PHP language.', '/');
+(1, 'Currently page', 'This page was created as page for introduce myself and show clean_class basic skill at PHP language.', '/');
 
 -- --------------------------------------------------------
 
