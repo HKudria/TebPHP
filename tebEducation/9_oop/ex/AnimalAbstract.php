@@ -22,7 +22,7 @@ abstract class Animal
 
 }
 
-class Ryba extends Animal
+class Fish extends Animal
 {
     protected string $place;
 
@@ -37,21 +37,21 @@ class Ryba extends Animal
     }
 }
 
-class Ssak extends Animal
+class Mammal extends Animal
 {
     public function biegnij(){
         echo 'biegnij<br>';
     }
 }
 
-class Ptak extends Animal
+class Bird extends Animal
 {
     public function lec(){
         echo 'lec<br>';
     }
 }
 
-class PiesDomowy extends Ssak
+class Dog extends Mammal
 {
     protected string $rasa, $woolColor;
 
