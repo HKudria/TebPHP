@@ -17,7 +17,6 @@ abstract class Animal
         $this->wiek = $wiek;
     }
 
-
 }
 
 class Fish extends Animal

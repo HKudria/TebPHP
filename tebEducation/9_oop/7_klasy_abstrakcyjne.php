@@ -10,10 +10,18 @@ abstract class Vechile
         $this->owner = $owner;
     }
 
+    public function getOwner(): string
+    {
+        return $this->owner;
+    }
     public function __construct($brand,$model)
     {
         $this->brand = $brand;
         $this->model = $model;
+    }
+
+    public function test(){
+        echo 'Test';
     }
 }
 
@@ -43,3 +51,8 @@ $car->hunk();
 $boat = new Boat('Yamacha','new-model');
 $boat->hunk();
 
+echo 'Metody klasy boat:<br><ul>';
+foreach (get_class_methods($boat) as $method){
+    echo "<li>$method</li>";
+}
+echo "<ul>";
