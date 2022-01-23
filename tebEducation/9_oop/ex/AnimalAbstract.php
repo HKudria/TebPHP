@@ -73,7 +73,7 @@ class Dog extends Mammal
     }
 }
 
-$pies = new PiesDomowy('20','10','mini','blue');
+$pies = new Dog('20','10','mini','blue');
 echo 'I can do follow things:<br>';
 
 foreach (get_class_methods($pies) as $method){
