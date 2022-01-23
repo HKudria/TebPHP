@@ -26,7 +26,7 @@ abstract class GeometricFigure
     }
 
     public abstract function area();
-    public abstract function square();
+    public abstract function perimetr();
     public abstract function draw();
 }
 
@@ -37,7 +37,7 @@ class Circle extends GeometricFigure
         echo 'area '.get_class($this). '<br>';
     }
 
-    public function square()
+    public function perimetr()
     {
         echo 'square '.get_class($this) . '<br>';
     }
@@ -48,6 +48,7 @@ class Circle extends GeometricFigure
     }
 
 }
+
 
 $obj = new Circle();
 $obj1 = new Circle();
