@@ -1,7 +1,5 @@
 <?php
 
-use JetBrains\PhpStorm\Pure;
-
 abstract class Animal
 {
     protected float $masa, $wiek;
