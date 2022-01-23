@@ -10,7 +10,7 @@ abstract class Animal
         echo 'patrz<br>';
     }
     public function oddychaj(){
-        echo 'patrz<br>';
+        echo 'oddychaj<br>';
     }
 
     public function __construct($masa, $wiek)
