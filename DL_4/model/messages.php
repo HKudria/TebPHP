@@ -1,5 +1,5 @@
 <?php
-	include_once('db.php');
+	include_once('core/db.php');
 
 	function messagesAll() : array{
 		$sql = "SELECT * FROM messages INNER JOIN categoryes ON messages.id_cat = categoryes.id ORDER BY dt_add DESC";
@@ -8,7 +8,7 @@
 	}
 
 	function messagesAdd(array $fields) : bool{
-		$sql = "INSERT INTO messages (name, text, id_cat) VALUES (:name, :text, :id_cat)";
+		$sql = "INSERT INTO messages (name, text, id_cat) VALUES (:name, :text, :cat_id)";
 		$query = dbQuery($sql, $fields);
 		return true;
 	}
@@ -20,7 +20,7 @@
 	}
 
     function messagesEdit(array $fields) : bool{
-        $sql = "UPDATE messages SET name=:name, text=:text, id_cat=:id_cat WHERE id_message=:id";
+        $sql = "UPDATE messages SET name=:name, text=:text, id_cat=:cat_id WHERE id_message=:id";
         $query = dbQuery($sql, $fields);
         return true;
     }

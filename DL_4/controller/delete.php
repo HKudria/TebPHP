@@ -1,6 +1,6 @@
 <?php
 include_once('../model/messages.php');
-include_once('../model/db.php');
+include_once('../core/db.php');
 
 $id = checkID($_GET['id']?? '');
 if ($id){

@@ -2,7 +2,7 @@
 <div class="form">
 	<form method="post">
 		Category:
-		<select name="id_cat">
+		<select name="cat_id">
 		<?php foreach($cats as $cat): ?>
 			<option value="<?php echo $cat['id']?>"
 					  <?php echo ($cat['id'] == $fields['id_cat'] ? 'selected' : '')?>

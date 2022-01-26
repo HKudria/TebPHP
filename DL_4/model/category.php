@@ -1,5 +1,5 @@
 <?php
-include_once('db.php');
+include_once('core/db.php');
 
 function categoryAll() : array{
     $sql = "SELECT * FROM categoryes";
