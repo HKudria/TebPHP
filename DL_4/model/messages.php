@@ -1,17 +1,11 @@
 <?php
-	include_once('model/db.php');
+	include_once('db.php');
 
 	function messagesAll() : array{
 		$sql = "SELECT * FROM messages INNER JOIN categoryes ON messages.id_cat = categoryes.id ORDER BY dt_add DESC";
 		$query = dbQuery($sql);
 		return $query->fetchAll();
 	}
-
-    function categoryAll() : array{
-        $sql = "SELECT * FROM categoryes";
-        $query = dbQuery($sql);
-        return $query->fetchAll();
-    }
 
 	function messagesAdd(array $fields) : bool{
 		$sql = "INSERT INTO messages (name, text, id_cat) VALUES (:name, :text, :id_cat)";

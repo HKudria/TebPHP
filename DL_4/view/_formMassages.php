@@ -1,29 +1,4 @@
-<?php
 
-include_once('model/messages.php');
-include_once('model/db.php');
-
-$cats = categoryAll();
-$fields = ['name' => '', 'text' => '', 'id_cat' => 0];
-$err = '';
-
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-	$fields['name'] = trim($_POST['name']);
-	$fields['text'] = trim($_POST['text']);
-	$fields['id_cat'] = (int)$_POST['id_cat'];
-	
-	if($fields['name'] === '' || $fields['text'] === ''){
-		$err = 'Заполните все поля!';
-	}
-	else{
-		messagesAdd($fields);
-		$id = dbLastId();
-		header("Location: message.php?id=$id");
-		exit();
-	}
-}
-
-?>
 <div class="form">
 	<form method="post">
 		Category:
@@ -43,4 +18,5 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		<button>Send</button>
 		<p><?php echo $err?></p>
 	</form>
+    <a href="../index.php">Go to main page</a>
 </div>
