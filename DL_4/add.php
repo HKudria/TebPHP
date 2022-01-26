@@ -3,11 +3,7 @@
 include_once('model/messages.php');
 include_once('model/db.php');
 
-$cats = [
-	['id_cat' => '1', 'title' => 'Phones'],
-	['id_cat' => '2', 'title' => 'Notebooks']
-];
-
+$cats = categoryAll();
 $fields = ['name' => '', 'text' => '', 'id_cat' => 0];
 $err = '';
 
@@ -33,10 +29,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		Category:
 		<select name="id_cat">
 		<?php foreach($cats as $cat): ?>
-			<option value="<?php echo $cat['id_cat']?>"
-					  <?php echo ($cat['id_cat'] == $fields['id_cat'] ? 'selected' : '')?>
+			<option value="<?php echo $cat['id']?>"
+					  <?php echo ($cat['id'] == $fields['id_cat'] ? 'selected' : '')?>
 			>
-				<?php echo $cat['title']?>
+				<?php echo $cat['category']?>
 			</option>
 		<?php endforeach; ?>
 		</select><br>

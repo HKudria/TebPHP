@@ -2,6 +2,8 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/phphop/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/phphop/vendor/psr/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/phphop/vendor/psr/http-factory" />
@@ -89,6 +91,15 @@
       <excludeFolder url="file://$MODULE_DIR$/phphop/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/phphop/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/phphop/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/phphop/runtime/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/phphop/runtime/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/phphop/runtime/logs" />
+      <excludeFolder url="file://$MODULE_DIR$/phphop/web/assets/5ef55313" />
+      <excludeFolder url="file://$MODULE_DIR$/phphop/web/assets/6ad23425" />
+      <excludeFolder url="file://$MODULE_DIR$/phphop/web/assets/76651308" />
+      <excludeFolder url="file://$MODULE_DIR$/phphop/web/assets/a00f6f95" />
+      <excludeFolder url="file://$MODULE_DIR$/phphop/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -4,12 +4,17 @@ include_once('model/messages.php');
 $messages = messagesAll();
 
 ?>
-<h1>Chat</h1>
-<a href="add.php">add</a>
+<h1>Blog</h1>
+<ul>
+    <li><a href="add.php">add</a></li>
+</ul>
+
+
 <div>
 <?php foreach($messages as $message): ?>
 	<div>
-		<strong><?=$message['name']?></strong>
+        <strong><?php echo $message['name']?></strong><br>
+        <strong><?=$message['category']?></strong>
 		<em><?=$message['dt_add']?></em>
 		<div>
 			<?=$message['text']?>

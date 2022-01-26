@@ -1,6 +1,6 @@
 <?php
 
-$db = new PDO('mysql:dbname=lesson;host=localhost;port=3306;charset=utf8','root','');
+$db = new PDO('mysql:dbname=lesson;host=localhost;port=3306;charset=utf8','root','root');
 //var_dump($_FILES);
 
 if(isset($_POST['submit'])) {
