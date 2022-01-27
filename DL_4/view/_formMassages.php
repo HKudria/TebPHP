@@ -5,7 +5,7 @@
 		<select name="cat_id">
 		<?php foreach($cats as $cat): ?>
 			<option value="<?php echo $cat['id']?>"
-					  <?php echo ($cat['id'] == $fields['id_cat'] ? 'selected' : '')?>
+					  <?php echo ($cat['id'] == $fields['cat_id'] ? 'selected' : '')?>
 			>
 				<?php echo $cat['category']?>
 			</option>
@@ -16,7 +16,14 @@
 		Text:<br>
 		<textarea name="text"><?php echo $fields['text']?></textarea><br>
 		<button>Send</button>
-		<p><?php echo $err?></p>
+		<p>
+            <?php
+            if(!empty($err)):
+                foreach ($err as $error):
+                    echo $error . '<br>';
+                endforeach;
+            endif;?>
+        </p>
 	</form>
     <a href="../index.php">Go to main page</a>
 </div>

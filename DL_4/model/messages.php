@@ -30,3 +30,26 @@
         $query = dbQuery($sql, ['id' => $id]);
         return true;
     }
+
+    function validateFields(&$fields) : array
+    {
+        $err = [];
+        foreach ($fields as $field) {
+            if ($field === '') {
+                $err[] = 'Заполните все поля!';
+            }
+        }
+        if(mb_strlen($fields['name'])<2){
+           $err[] = 'Name is too short';
+        }
+
+        if(mb_strlen($fields['text'])<10 || mb_strlen($fields['text']) > 200){
+            $err[] = 'The text range must be between 10 and 200 chars';
+        }
+
+        foreach ($fields as $key => $field) {
+                $fields[$key] = htmlentities($field);
+        }
+
+        return $err;
+    }

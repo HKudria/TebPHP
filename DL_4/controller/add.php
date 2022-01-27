@@ -10,18 +10,17 @@ $err = '';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$fields = extractField($_POST,['name','text','cat_id']);
-	
-	if($fields['name'] === '' || $fields['text'] === ''){
-		$err = 'Заполните все поля!';
-	}
-	else{
+	$err = validateFields($fields);
+	var_dump($fields);
+	if(empty($err)){
 		messagesAdd($fields);
 		$id = dbLastId();
 		header("Location: message.php?id=$id");
 		exit();
 	}
+
 } else {
-	$fields = ['name' => '', 'text' => '', 'id_cat' => 0];
+	$fields = ['name' => '', 'text' => '', 'cat_id' => 0];
 }
 
 include('../view/_formMassages.php');
