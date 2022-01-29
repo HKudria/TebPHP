@@ -6,6 +6,6 @@
 </head>
 <body>
 <h1>PAGE NOT FOUND | 404</h1>
-<a href="../index.php">Go to main page</a>
+<a href="./">Go to main page</a>
 </body>
 </html>

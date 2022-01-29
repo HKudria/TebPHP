@@ -25,5 +25,5 @@
             endif;?>
         </p>
 	</form>
-    <a href="../index.php">Go to main page</a>
+    <a href="./">Go to main page</a>
 </div>

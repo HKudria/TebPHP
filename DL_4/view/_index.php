@@ -1,6 +1,6 @@
 <h1>Blog</h1>
 <ul>
-    <li><a href="controller/add.php">add</a></li>
+    <li><a href="?c=add"">add</a></li>
 </ul>
 
 
@@ -13,7 +13,7 @@
             <div>
                 <?=$message['text']?>
             </div>
-            <a href="controller/message.php?id=<?=$message['id_message']?>">Read more</a>
+            <a href="?c=message&id=<?=$message['id_message']?>">Read more</a>
             <hr>
         </div>
     <?php endforeach; ?>

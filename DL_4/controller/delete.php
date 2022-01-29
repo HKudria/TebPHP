@@ -1,18 +1,19 @@
 <?php
-include_once('../model/messages.php');
-include_once('../core/db.php');
+include_once('model/messages.php');
+include_once('model/errors.php');
+
 
 $id = checkID($_GET['id']?? '');
 if ($id){
     if($_GET['id']!=$id){
-        header("Location: ../delete.php?id=$id");
+        header("Location: ?c=delete&id=$id");
         exit();
     }
     messagesDelete($id);
-    header("Location: ../index.php");
+    header("Location: ./");
     exit();
 } else {
-    header("Location: ../index.php");
+   error404();
     exit();
 }
 

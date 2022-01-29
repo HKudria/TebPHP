@@ -1,8 +1,8 @@
 <h1>Chat</h1>
 <ul>
-    <li><a href="../index.php">Main page</a></li>
-    <li><a href="edit.php?id=<?php echo $id?>">Edit massage</a></li>
-    <li><a href="delete.php?id=<?php echo $id?>">Delete massage</a></li>
+    <li><a href="./">Main page</a></li>
+    <li><a href="?c=edit&id=<?php echo $id?>">Edit massage</a></li>
+    <li><a href="?c=delete&id=<?php echo $id?>">Delete massage</a></li>
 </ul>
 
 

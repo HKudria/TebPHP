@@ -1,9 +1,8 @@
 <?php
 
-include_once('../model/messages.php');
-include_once('../model/category.php');
-include_once('../core/db.php');
-include_once('../core/arr.php');
+include_once('model/messages.php');
+include_once('model/category.php');
+
 
 $cats = categoryAll();
 $err = '';
@@ -15,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	if(empty($err)){
 		messagesAdd($fields);
 		$id = dbLastId();
-		header("Location: message.php?id=$id");
+		header("Location: ?c=message&id=$id");
 		exit();
 	}
 
@@ -23,6 +22,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$fields = ['name' => '', 'text' => '', 'cat_id' => 0];
 }
 
-include('../view/_formMassages.php');
+include('view/_formMassages.php');
 
 ?>

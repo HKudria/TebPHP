@@ -1,11 +1,6 @@
 <?php
 include_once('core/db.php');
-include_once('model/messages.php');
-if(($messages = messagesAll()) !== null){
-    include('view/_index.php');
-} else {
-    include('view/_error.php');
-}
-
-?>
-
+include_once('core/arr.php');
+$cname = $_GET['c'] ?? 'index';
+$path = "controller/$cname.php";
+include_once($path);

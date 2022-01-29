@@ -1,17 +1,17 @@
 <?php
-include_once('../model/messages.php');
-include_once('../model/errors.php');
-include_once('../core/db.php');
+include_once('model/messages.php');
+include_once('model/errors.php');
+
 
 $id = checkID($_GET['id']?? '');
 if ($id){
     if($_GET['id']!=$id){
-        header("Location: edit.php?id=$id");
+        header("Location: ?c=message&id=$id");
         exit();
     }
     if($message = messagesOne($id)){
         //var_dump($message);
-        include('../view/_massages.php');
+        include('view/_massages.php');
     } else {
         error404();
     }
