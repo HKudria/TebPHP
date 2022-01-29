@@ -1,5 +1,5 @@
 <?php
-	include_once('core/db.php');
+
 
 	function messagesAll() : array{
 		$sql = "SELECT * FROM messages INNER JOIN categoryes ON messages.id_cat = categoryes.id ORDER BY dt_add DESC";

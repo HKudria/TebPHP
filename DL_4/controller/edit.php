@@ -1,6 +1,7 @@
 <?php
 include_once('../model/messages.php');
 include_once('../model/category.php');
+include_once('../model/errors.php');
 include_once('../core/db.php');
 include_once('../core/arr.php');
 
@@ -14,16 +15,14 @@ if ($id){
         header("Location: message.php?id=$id");
         exit();
     }
-    if(($message = messagesOne($id))!==null){
+    if($message = messagesOne($id)){
         $fields = ['name' => $message['name'], 'text' => $message['text'], 'cat_id' => $message['id_cat']];
         include('../view/_formMassages.php');
     } else {
-        header("Location: ../index.php");
-        exit();
+        error404();
     }
 } else {
-    header("Location: ../index.php");
-    exit();
+    error404();
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){

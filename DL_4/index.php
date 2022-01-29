@@ -1,5 +1,5 @@
 <?php
-
+include_once('core/db.php');
 include_once('model/messages.php');
 if(($messages = messagesAll()) !== null){
     include('view/_index.php');
