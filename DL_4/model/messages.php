@@ -8,7 +8,7 @@
 	}
 
 	function messagesAdd(array $fields) : bool{
-		$sql = "INSERT INTO messages (name, text, id_cat) VALUES (:name, :text, :cat_id)";
+		$sql = "INSERT INTO messages (name, text, id_cat) VALUES (:name, :text, :id_cat)";
 		$query = dbQuery($sql, $fields);
 		return true;
 	}
@@ -19,8 +19,9 @@
 		return $query->fetch();
 	}
 
-    function messagesEdit(array $fields) : bool{
-        $sql = "UPDATE messages SET name=:name, text=:text, id_cat=:cat_id WHERE id_message=:id";
+    function messagesEdit(array $fields, int $id) : bool{
+        $fields['id'] = $id;
+        $sql = "UPDATE messages SET name=:name, text=:text, id_cat=:id_cat WHERE id_message=:id";
         $query = dbQuery($sql, $fields);
         return true;
     }

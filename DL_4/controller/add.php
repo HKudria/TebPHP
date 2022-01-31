@@ -8,9 +8,9 @@ $cats = categoryAll();
 $err = '';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-	$fields = extractField($_POST,['name','text','cat_id']);
+	$fields = extractField($_POST,['name','text','id_cat']);
 	$err = validateFields($fields);
-	var_dump($fields);
+	//var_dump($fields);
 	if(empty($err)){
 		messagesAdd($fields);
 		$id = dbLastId();
@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	}
 
 } else {
-	$fields = ['name' => '', 'text' => '', 'cat_id' => 0];
+	$fields = ['name' => '', 'text' => '', 'id_cat' => 0];
 }
 
 include('view/_formMassages.php');

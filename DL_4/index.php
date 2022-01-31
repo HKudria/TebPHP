@@ -1,6 +1,23 @@
 <?php
 include_once('core/db.php');
 include_once('core/arr.php');
+include_once('core/system.php');
+include_once('core/errors.php');
+
+
+
 $cname = $_GET['c'] ?? 'index';
 $path = "controller/$cname.php";
-include_once($path);
+
+if(checkControllerName($cname) && file_exists($path)){
+    include_once($path);
+} else {
+   error404();
+}
+fu
+
+
+
+
+
+

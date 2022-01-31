@@ -11,3 +11,4 @@ function extractField(array $arrayWithData, array $fields) : array
 
     return $result;
 }
+

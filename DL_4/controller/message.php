@@ -1,6 +1,6 @@
 <?php
 include_once('model/messages.php');
-include_once('model/errors.php');
+
 
 
 $id = checkID($_GET['id']?? '');
