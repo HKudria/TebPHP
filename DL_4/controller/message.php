@@ -2,7 +2,7 @@
 include_once('model/messages.php');
 
 
-
+$title = 'Show article';
 $id = checkID($_GET['id']?? '');
 if ($id){
     if($_GET['id']!=$id){

@@ -1,6 +1,7 @@
 <?php
 include_once('model/messages.php');
 include_once('model/category.php');
+$title = 'Edit article';
 
 $err = '';
 $id = checkID($_GET['id'] ?? '');

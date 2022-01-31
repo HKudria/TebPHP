@@ -2,6 +2,7 @@
 
 include_once('model/messages.php');
 include_once('model/category.php');
+$title = 'Add article';
 
 
 $cats = categoryAll();

@@ -1,3 +1,4 @@
+
 <h1>Blog</h1>
 <ul>
     <li><a href="?c=add"">add</a></li>
