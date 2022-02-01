@@ -1,2 +1,0 @@
-This is my text file for test
-<br>some new text<br>some new text<br>some new text<br>some new text<br>some new text<br>some new text<br>some new text
