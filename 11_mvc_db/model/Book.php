@@ -20,7 +20,7 @@ class Book
        $sql = "SELECT * FROM books";
        $result = DataBase::dbInstance()->query($sql);
        foreach ($result->fetchAll() as $book){
-           $allBooks[] = new Book($book['title'],$book['author'],$book['description']);
+           $allBooks[] = new User($book['title'],$book['author'],$book['description']);
 
        }
        return $allBooks;
@@ -33,7 +33,7 @@ class Book
         $result = DataBase::dbInstance()->prepare($sql);
         $result->execute(['title' => $title]);
         foreach ($result->fetchAll() as $book){
-            $allBooks[] = new Book($book['title'],$book['author'],$book['description']);
+            $allBooks[] = new User($book['title'],$book['author'],$book['description']);
         }
         return $allBooks;
     }

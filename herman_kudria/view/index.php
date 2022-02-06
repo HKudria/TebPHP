@@ -1,0 +1,1 @@
+<h1>Witaj <?php echo $_SESSION['name']??''?></h1>

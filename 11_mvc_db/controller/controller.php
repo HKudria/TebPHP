@@ -7,7 +7,7 @@ class Controller
 
     public function __construct()
     {
-        $this->model =  new Book();
+        $this->model =  new User();
     }
 
     public function invoke()

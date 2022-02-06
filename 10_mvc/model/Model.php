@@ -6,9 +6,9 @@ class Model
     public function getBookDetails()
     {
        $test = array(
-            "test1" => new Book('Ja','jest', 'groot'),
-            "test2" => new Book('laravel','ja', 'php 8'),
-            "test3" => new Book('laravel','jaja', 'php 8 ja')
+            "test1" => new User('Ja','jest', 'groot'),
+            "test2" => new User('laravel','ja', 'php 8'),
+            "test3" => new User('laravel','jaja', 'php 8 ja')
         );
         return $test;
     }
