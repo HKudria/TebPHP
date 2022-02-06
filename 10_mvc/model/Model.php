@@ -19,7 +19,7 @@ class Model
         $allBooks = $this->getBookDetails();
         foreach ($allBooks as $book){
             if ($book->title == $title){
-                $getTitleBook[] = $book;
+                $booksWithTitle[] = $book;
             }
         }
         return $booksWithTitle;
