@@ -75,3 +75,16 @@ Route::prefix('admin')->group(function(){
         echo 'user pages';
     });
 });
+
+Route::prefix('user')->group(function(){
+    Route::get('home/{name}/{age?}', function ($name, $age=null) {
+        echo 'Witaj '. $name;
+        if(!is_null($age)){
+            echo '<br>Twoj wiek wynosi '. $age;
+        }
+    })->where(['name' => '[a-zA-Z]+', 'age' => '[0-9]+']); //regex by function
+
+    Route::get('/users', function () {
+        echo 'user pages';
+    });
+});
