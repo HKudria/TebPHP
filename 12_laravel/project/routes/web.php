@@ -44,3 +44,34 @@ Route::get('/pages/{inbox}', function ($inbox) {
 
 });
 
+//Route::get('/addres/{city}/{street?}/{zipCode?}', function(string $city, string $street="", string $zipCode=null) {
+//    return redirect('/address/'.$city.'/'.$street.'/'.$zipCode);
+//});
+
+Route::get('/address/{city}/{street?}/{zipCode?}', function(string $city, string $street="", string $zipCode=null) {
+    if(is_null($zipCode)){
+        $zipCode='brak';
+    }else{
+        $zipCode = substr($zipCode,0,2).'-'.substr($zipCode,2,3);
+    }
+
+    echo <<<ADRESS
+        Miasto: $city <br>
+        Ulica: $street <br>
+        Kod pocztowy: $zipCode
+ADRESS;
+
+
+})->name('address');
+
+Route::redirect('/addres/{city}/{street?}/{zipCode?}','/address/{city}/{street?}/{zipCode?}');
+
+Route::prefix('admin')->group(function(){
+    Route::get('/home', function () {
+       echo 'admin pages';
+    });
+
+    Route::get('/user', function () {
+        echo 'user pages';
+    });
+});
