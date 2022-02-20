@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,14 +79,81 @@ Route::prefix('admin')->group(function(){
 });
 
 Route::prefix('user')->group(function(){
-    Route::get('home/{name}/{age?}', function ($name, $age=null) {
+    Route::get('home/{name}/{age?}', function (string $name, int $age=null) {
         echo 'Witaj '. $name;
         if(!is_null($age)){
             echo '<br>Twoj wiek wynosi '. $age;
         }
-    })->where(['name' => '[a-zA-Z]+', 'age' => '[0-9]+']); //regex by function
+    })->where(['name' => '[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]+', 'age' => '[0-9]+']); //regex by function
 
     Route::get('/users', function () {
         echo 'user pages';
     });
 });
+
+
+Route::get('/teb1', function () {
+    $arr = [
+        'name' => 'Janusz',
+        'surname' => 'Nowak',
+        'city' => 'Poznań',
+        //'city' => 'Wroclaw',
+        //'city' => 'Warszawa',
+        //'city' => 'Jarocin',
+    ];
+    $arr['znak'] = mb_strlen($arr['city']);
+
+    return view('teb', $arr);
+});
+
+
+Route::get('loop', function (){
+    $car = [
+        [
+            'brand' => 'Ferrari',
+            'model' => 'f430',
+            'color' => 'red',
+        ],
+        [
+            'brand' => 'Fiat',
+            'model' => '126p',
+            'color' => 'white',
+        ],
+        [
+            'brand' => 'Porsche',
+            'model' => 'Panamera',
+            'color' => 'black',
+        ]
+    ];
+
+    return view('loop', ['car'=>$car]);
+});
+
+Route::get('/car/{brand?}/{model?}/{color?}/{price?}', function(string $brand=null, string $model=null, string $color=null, int $price=null) {
+  $car = [
+      'brand' => $brand,
+      'model' => $model,
+      'color' => $color,
+      'price' => $price
+  ];
+
+    return view('car',$car);
+})->where(['brand' => '[A-Za-z]+', 'model' => '[A-Za-z0-9]+', 'color'=> '[A-Za-z]+', 'price' => '[0-9]+'])->name('car');
+
+Route::redirect('/auto/{brand?}/{model?}/{color?}/{price?}','/car/{brand?}/{model?}/{color?}/{price?}');
+
+Route::fallback(function () {
+    return view('mistake');
+});
+
+Route::get('blade', function (){
+   return view('szablon');
+});
+
+Route::get('TebC', [App\Http\Controllers\TebSite::class, 'index']);
+
+//zadanie domowe
+Route::get('carTest/{brand?}/{model?}/{color?}/{price?}', [App\Http\Controllers\TebSite::class, 'car'])->where(['brand' => '[A-Za-z]+', 'model' => '[A-Za-z0-9]+', 'color'=> '[A-Za-z]+', 'price' => '[0-9]+'])->name('carTest');
+
+Route::redirect('/auto1/{brand?}/{model?}/{color?}/{price?}','/carTest/{brand?}/{model?}/{color?}/{price?}');
+
