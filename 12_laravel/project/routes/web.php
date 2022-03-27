@@ -142,9 +142,9 @@ Route::get('/car/{brand?}/{model?}/{color?}/{price?}', function(string $brand=nu
 
 Route::redirect('/auto/{brand?}/{model?}/{color?}/{price?}','/car/{brand?}/{model?}/{color?}/{price?}');
 
-Route::fallback(function () {
-    return view('mistake');
-});
+//Route::fallback(function () {
+//    return view('mistake');
+//});
 
 Route::get('blade', function (){
    return view('szablon');
@@ -156,4 +156,17 @@ Route::get('TebC', [App\Http\Controllers\TebSite::class, 'index']);
 Route::get('carTest/{brand?}/{model?}/{color?}/{price?}', [App\Http\Controllers\TebSite::class, 'car'])->where(['brand' => '[A-Za-z]+', 'model' => '[A-Za-z0-9]+', 'color'=> '[A-Za-z]+', 'price' => '[0-9]+'])->name('carTest');
 
 Route::redirect('/auto1/{brand?}/{model?}/{color?}/{price?}','/carTest/{brand?}/{model?}/{color?}/{price?}');
+
+Route::get('apis/{first?}/{second?}', [App\Http\Controllers\Api::class, 'index']);
+
+
+Route::get('data', [App\Http\Controllers\Data::class, 'list']);
+Route::get('kursy', [App\Http\Controllers\Data::class, 'kurs']);
+Route::get('kalkulatorvalut', [App\Http\Controllers\Data::class, 'kalkulator']);
+Route::post('kalkulatorvalut', [App\Http\Controllers\Data::class, 'kalkulator']);
+
+Route::get('json', function (){
+    echo 'isJson';
+})->middleware('isJson');
+
 
