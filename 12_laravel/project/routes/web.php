@@ -169,4 +169,30 @@ Route::get('json', function (){
     echo 'isJson';
 })->middleware('isJson');
 
+//30.04.2022 - New lesson
+Route::view('login','login');
 
+Route::post('login',[App\Http\Controllers\Login::class, 'index']);
+Route::get('logout',[App\Http\Controllers\Login::class, 'logout']);
+Route::get('profile',[App\Http\Controllers\Login::class, 'profile']);
+
+//Route::view('profilelang','profileLang');
+Route::get('/profilelang/{lang?}', function($lang='pl'){
+    if (! in_array($lang, ['en', 'pl', 'ru'])) {
+        abort(404);
+    }
+    App::setLocale($lang);
+    return view('profileLang');
+});
+
+Route::get('send',function (){
+    $details = [
+        'title' => 'CDV - email',
+        'body' => 'Wiadomość testowa',
+        ];
+    \Mail::to('mirek.szyper@gmail.com')->send(new \App\Mail\TestMail($details));
+    echo 'Wiadomość wyslana pomyślnie';
+});
+
+
+Route::get('wykres', [App\Http\Controllers\Wykres::class, 'wykres']);
